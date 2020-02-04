@@ -2,7 +2,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-size: 10px;
 }
 
 :root {
@@ -12,6 +11,7 @@
 	background-color: #191919;
 	text-align: center;
 	color: #dcdcdc;
+	font-size: 10px;
 }
 
 @media screen and (min-width: 600px) {
@@ -50,9 +50,9 @@ a {
 	width: 100%;
 	height: 100%;
 	padding: 1rem;
-	color: #a38aff;
+	color: #bcacff;
 	text-decoration: none;
-	font-size: 1.5rem;
+	font-size: 1.75rem;
 	font-weight: 700;
 	transition: color 150ms ease;
 }

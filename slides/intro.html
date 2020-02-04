@@ -4,15 +4,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Intro</title>
-	<link rel="stylesheet" href="./css/reset.css">
-	<link rel="stylesheet" href="./css/reveal.css">
-	<link rel="stylesheet" href="./css/theme/black.css">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/reveal.css">
+	<link rel="stylesheet" href="../css/theme/black.css">
 	<!-- Printing and PDF exports -->
 	<script>
 		var link = document.createElement('link');
 		link.rel = 'stylesheet';
 		link.type = 'text/css';
-		link.href = window.location.search.match(/print-pdf/gi) ? './css/print/pdf.css' : './css/print/paper.css';
+		link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
 		document.getElementsByTagName('head')[0].appendChild(link);
 	</script>
 	<style>
@@ -25,7 +25,7 @@
 			list-style: none;
 		}
 
-		img[src="./assets/gmqr.jpg"] { height: 100px; }
+		img[src="../assets/gmqr.jpg"] { height: 100px; }
 
 		.reveal h3, .reveal .progress, .reveal .controls button { color: #a38aff; }
 	</style>
@@ -37,7 +37,7 @@
 				<section>
 					<h1>ACM WD</h1>
 					<h3>The SIG on Web Development</h3>
-					<img src="./assets/signinqr.png" alt="sign in form qr code">
+					<img src="../assets/signinqr.png" alt="sign in form qr code">
 					<a href="https://forms.gle/H72nCVb9hMBRs8U28" target="_blank" rel="noopener noreferrer">
 						https://forms.gle/H72nCVb9hMBRs8U28
 					</a>
@@ -45,7 +45,7 @@
 				<section>
 					<h3>Meetings</h3>
 					<p class="when">Tuesdays @ 5PM</p>
-					<p class="where">TBD</p>
+					<p class="where">Boyd 208</p>
 				</section>
 				<section>
 					<h3>Links</h3>
@@ -60,34 +60,47 @@
 							https://github.com/michaelrehman/ACM_WD/tree/projects - Projects
 						</a></li>
 						<li>
-							<img src="./assets/gmqr.png" alt="groupme qrcode">
+							<img src="../assets/gmqr.png" alt="groupme qrcode">
 							<a href="https://groupme.com/join_group/56184380/PEv52zg1" target="_blank" rel="noopener noreferrer">
 								https://groupme.com/join_group/56184380/PEv52zg1 - GroupMe
 							</a>
 						</li>
 					</ul>
+					<aside class="notes">
+						<h3>Ways to view slides</h3>
+						<ol>
+							<li>The webpage I made (downloads the PDFs if on mobile)</li>
+							<li>View the pdf through github (links don't work)</li>
+							<li>Download the PDFs (inconvenient)</li>
+							<li>Clone the repo and run them (not practical)</li>
+						</ol>
+					</aside>
 				</section>
 				<section>
 					<h3>A quick survey</h3>
-					<img src="./assets/surveyqr.png" alt="survey form qr code">
+					<img src="../assets/surveyqr.png" alt="survey form qr code">
 					<a href="https://forms.gle/C43NuP1HPd7zr9J3A" target="_blank" rel="noopener noreferrer">
 						https://forms.gle/C43NuP1HPd7zr9J3A
 					</a>
+					<aside class="notes">
+						<ul>
+							<li>Just to get a feel of where everyone is</li>
+						</ul>
+					</aside>
 				</section>
 				<section>
 					<h3>A bit about me</h3>
 					<ul>
-						<li class="fragment">Freshman</li>
-						<li class="fragment">Computer science major</li>
-						<li class="fragment">Currently specialize in web development</li>
+						<li>Computer science major</li>
+						<li>Currently specialize in web development</li>
 					</ul>
 				</section>
 				<section>
 					<h3>Why web development</h3>
 					<ul>
-						<li class="fragment">High in demand</li>
-						<li class="fragment">High visibility</li>
-						<li class="fragment">Can easily transition to mobile or desktop</li>
+						<li>High in demand</li>
+						<li>High visibility</li>
+						<li>Can easily transition to mobile or desktop</li>
 					</ul>
 					<aside class="notes">
 						<ul>
@@ -107,25 +120,20 @@
 					<h1>What to expect</h1>
 				</section>
 				<section>
-					<h3>Things we'll learn</h3>
+					<h3>Things we'll cover</h3>
 					<ul>
-						<li class="fragment">How the web works (HTTP, requests/responses, clients/servers)</li>
-						<li class="fragment">The fundamentals (HTML, CSS, JS)</li>
-						<li class="fragment">Frontend, Backend (w/ Node.js)</li>
-						<li class="fragment">As well as anything you guys want</li>
+						<li>How the web works (HTTP, requests/responses, clients/servers)</li>
+						<li>The fundamentals (HTML, CSS, JS)</li>
+						<li>Frontend, Backend (w/ Node.js)</li>
 					</ul>
 				</section>
 				<section>
 					<h3>Things to keep in mind</h3>
-					<ul>
-						<li class="fragment">Based on what you guys want to learn</li>
-						<li class="fragment">Don't feel you have to come to every meeting</li>
-					</ul>
 					<aside class="notes">
 						<ul>
-							<li>Tell me what you want to learn, and I'll do my best to teach it</li>
-							<li>Call me out if I make a mistake</li>
+							<li>Very lowkey</li>
 							<li>I will try to notify the meeting's topic ahead of time</li>
+							<li>A bit pressed for time so things may feel rushed</li>
 						</ul>
 					</aside>
 				</section>
@@ -190,12 +198,11 @@
 		</div>
 	</div>
 
-	<script src="./js/reveal.js"></script>
+	<script src="../js/reveal.js"></script>
 	<script>
 		Reveal.initialize({
 			dependencies: [
-				{ src: './plugin/notes/notes.js', async: true },
-				{ src: 'plugin/zoom-js/zoom.js', async: true }
+				{ src: '../plugin/notes/notes.js', async: true }
 			],
 			controlsTutorial: false,
 			mouseWheel: true

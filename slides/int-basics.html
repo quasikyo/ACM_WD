@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Internet Basics</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/reveal.css">
+	<link rel="stylesheet" href="../css/theme/black.css">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<style>
+		a { display: block; }
+
+		.reveal ul {
+			font-size: 2rem;
+			text-align: left !important;
+		}
+
+		.reveal h3, .reveal .progress, .reveal .controls button { color: #a38aff; }
+	</style>
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section id="intro">
+				<section>
+					<h1>Internet Basics</h1>
+					<img src="../assets/signinqr.png" alt="sign in form qr code">
+					<a href="https://forms.gle/H72nCVb9hMBRs8U28" target="_blank" rel="noopener noreferrer">
+						https://forms.gle/H72nCVb9hMBRs8U28
+					</a>
+				</section>
+				<section>
+					<h3>High level</h3>
+					<p>As developers, we don't need require a deep level of understanding of how the internet works</p>
+					<p>Most of it has been abstracted</p>
+				</section>
+			</section>
+			<section id="stepsMadeInARequest">
+				<section>
+					<h1>Response to request</h1>
+					<h3>What happens when you enter a URL in your browser?</h3>
+				</section>
+				<section>
+					<h3>A request gets sent out to that URL as a packet from the client</h3>
+					<ol>
+						<li>This packet contains info about the request</li>
+						<li>The packet is sent through underground wire</li>
+						<li>It continues travelling until it reaches an internet hub</li>
+						<aside class="notes">
+							<ul>
+								<li>The packet travels along various types of wire (copper, fiberoptic, fiberglass) depending on how far it needs to travel</li>
+							</ul>
+						</aside>
+					</ol>
+					<aside class="notes">
+						<ul>
+							<li>Contrary to popular belief, the internet is just a bunch of wires</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<h3>The internet hub uses the packet information to direct the packet</h3>
+					<ol>
+						<li>The packet gets sent back out toward its destination</li>
+						<li>It will travel again through wire until it either
+							<ul>
+								<li>reaches another internet hub,</li>
+								<li>or reaches its destination</li>
+							</ul>
+						</li>
+					</ol>
+				</section>
+				<section>
+					<h3>The destination is reached</h3>
+					<ol>
+						<li>The server fufills the request by sending a response</li>
+						<li>Typically, responses are too big so they are broken up into smaller packets</li>
+						<li>These packets are sent back with no particular order</li>
+						<li>The packets travel through various hubs until they arrive</li>
+					</ol>
+					<aside class="notes">
+						<ul>
+							<li>The important thing is that the packets get there, now how</li>
+							<li>In this case, the response is a file consisting of images and text (an webpage)</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<h3>The response arrives at the client</h3>
+					<ol>
+						<li>The packets rebuild themselves</li>
+					</ol>
+				</section>
+			</section>
+			<section id="http">
+				<section>
+					<h1>HTTP/HTTPS</h1>
+					<h3>HyperText Transfer Protocol (Secure)</h3>
+					<ul>
+						<li>It is the primary way the internet transfers data
+							<ul>
+								<li>text,</li>
+								<li>images,</li>
+								<li>videos,</li>
+								<li>etc.</li>
+							</ul>
+						</li>
+						<li>Status codes</li>
+						<li>Headers</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Status codes and headers will covered in more depth later on</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<h3>Status codes</h3>
+					<ul>
+						<li>1xx - in progress/informational</li>
+						<li>2xx - successful</li>
+						<li>3xx - redirects</li>
+						<li>4xx - client errors</li>
+						<li>5xx - server erros</li>
+					</ul>
+				</section>
+			</section>
+			<section id="wrappingUp">
+				<h1>Important Takeaways</h1>
+				<ul>
+					<li>Requests are sent by a client and receive responses from a server</li>
+					<li>HTTP/HTTPS</li>
+				</ul>
+			</section>
+			<section id="resources">
+				<h1>Additional Resources</h1>
+				<ul>
+					<li>
+						<a href="https://www.youtube.com/watch?v=qEdv_pem-JM" target="_blank" rel="noopener noreferrer">A Packet's Journey</a>
+					</li>
+					<li>
+						<a href="https://www.youtube.com/watch?v=7_LPdttKXPc" target="_blank" rel="noopener noreferrer">High Level Explanation of the Internet</a>
+					</li>
+					<li>
+						<a href="https://www.nginx.com/resources/glossary/http/" target="_blank" rel="noopener noreferrer">Brief Summary of HTTP</a>
+					</li>
+					<li>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" target="_blank" rel="noopener noreferrer">Detailed Explanation of HTTP</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="../js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			dependencies: [
+				{ src: '../plugin/notes/notes.js', async: true }
+			],
+			controlsTutorial: false,
+			mouseWheel: true
+		});
+	</script>
+</body>
+</html>
