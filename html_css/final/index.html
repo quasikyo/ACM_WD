@@ -4,30 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Some Title</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <nav></nav>
+    <nav class="nav">
+        <!-- When on an actual server, index.html is loaded by default when no file is specified. -->
+        <!-- So writing just / or ./ would suffice to load index.html. -->
+        <!-- / refers you to the root directory, which won't always be the same -->
+        <!-- as the current directory, ./. The current directory is where index.html is -->
+        <!-- so that's what we want to specify in our href attribute. -->
+        <a href="./index.html" class="nav__brand nav__link">someHipBrand</a>
+        <ul class="nav__list">
+            <li class="nav__link">
+                <a href="./index.html">Home</a>
+            </li>
+            <li class="nav__link">
+                <a href="./about.html">About</a>
+            </li>
+            <li class="nav__link">
+                <a href="#services">Services</a>
+            </li>
+        </ul>
+    </nav>
 
-    <header>
-        <h1></h1>
-    </header>
+    <section class="hero">
+        <header class="hero__header backdrop--light">
+            <h1 class="hero__header__title">Some Big Business Title</h1>
+            <p class="hero__header__subtext lead">Some mega ultra super catchy sub text about business.</p>
+        </header>
+    </section>
 
-    <main>
-        <section>
-            <header>
-                <h3></h3>
+    <main class="main" role="main">
+        <section id="services" class="main__section">
+            <header class="main__section__header">
+                <h3>Our Services</h3>
+                <h5 class="lead">We offer a variety of services.</h5>
             </header>
+            <section class="main__section__content">
+                <div class="card">
+                    <h5 class="content__header card__header">Service 1</h5>
+                    <p class="card__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae dolor impedit, eaque delectus beatae quo assumenda aut itaque eum quia veniam sit, ratione quibusdam quidem sed laboriosam, aspernatur qui eos maxime debitis. Doloribus ullam animi ex veritatis alias. Autem atque aut nulla, accusamus fuga nobis quos corrupti eos quia repellat?</p>
+                </div>
+                <div class="card">
+                    <h5 class="content__header card__header">Service 2</h5>
+                    <p class="card__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae dolor impedit, eaque delectus beatae quo assumenda aut itaque eum quia veniam sit, ratione quibusdam quidem sed laboriosam, aspernatur qui eos maxime debitis.</p>
+                </div>
+                <div class="card">
+                    <h5 class="content__header card__header">Service 3</h5>
+                    <p class="card__content">Doloribus ullam animi ex veritatis alias. Autem atque aut nulla, accusamus fuga nobis quos corrupti eos quia repellat?</p>
+                </div>
+            </section>
         </section>
-        <section>
-            <header>
-                <h3></h3>
+
+        <section id="experiences" class="main__section">
+            <header class="main__section__header">
+                <h3>Our Experience</h3>
+                <h5 class="lead">We have much experience so we know what we're doing.</h5>
             </header>
+            <section class="main__section__content">
+                <div class="row">
+                    <h5 class="content__header row__header">Credential 1</h5>
+                    <p class="row__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae dolor impedit, eaque delectus beatae quo assumenda aut itaque eum quia veniam sit, ratione quibusdam quidem sed laboriosam, aspernatur qui eos maxime debitis. Doloribus ullam animi ex veritatis alias. Autem atque aut nulla, accusamus fuga nobis quos corrupti eos quia repellat?</p>
+                </div>
+                <div class="row grid">
+                    <h5 class="content__header row__header">Credential 2</h5>
+                    <p class="row__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae dolor impedit, eaque delectus beatae quo assumenda aut itaque eum quia veniam sit, ratione quibusdam quidem sed laboriosam, aspernatur qui eos maxime debitis. Doloribus ullam animi ex veritatis alias. Autem atque aut nulla, accusamus fuga nobis quos corrupti eos quia repellat?</p>
+                </div>
+            </section>
         </section>
-        <section>
-            <header>
-                <h3></h3>
+
+        <section id="reviews" class="main__section">
+            <header class="main__section__header">
+                <h3>Our Reviews</h3>
+                <h5 class="lead">See our clients' testimonials.</h5>
             </header>
+            <section class="main__section__content">
+                <div class="testimonial">
+                    <h5 class="content__header testimonial__header">Jane Smith</h5>
+                    <blockquote class="testimonial__content">
+                        Fantastic service. It really helped in the process of divoricing a certain deadbeat I know. Lovely time getting anything I needed worked out.
+                    </blockquote>
+                </div>
+                <div class="testimonial">
+                    <h5 class="content__header testimonial__header">John Doe</h5>
+                    <blockquote class="testimonial__content">
+                        Please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please, please take me back.
+                    </blockquote>
+                </div>
+            </section>
         </section>
     </main>
+
+    <footer></footer>
 </body>
 </html>

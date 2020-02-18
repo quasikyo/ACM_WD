@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+header {
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fira Sans';
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Not sure why I have to include just a as well. */
+/* It should be automatically inherited from .nav. */
+/* Answer: https://stackoverflow.com/questions/1144931/when-will-an-a-tag-not-inherit-color-attribute-of-parent-tag */
+a, a:visited, a:active {
+    color: inherit;
+}
+
+/* By using generic class names, we can reuse their styles. */
+/* However, this is a small scale effect and bears little importance. */
+.backdrop--light {
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 25px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5rem;
+    padding: 0 15px;
+    color: #efefef;
+    background-color: rgb(112, 36, 184);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav__list {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.nav__brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background: url('https://images.unsplash.com/photo-1462899006636-339e08d1844e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80') center / cover no-repeat;
+}
+
+.hero__header {
+    padding: 5rem;
+    font-size: 5rem;
+}
+
+/* Expected behavior is root font-size * 5 (80px in this case). */
+/* For some reason, it's going to 120px, so explicitly declaring 1em here. */
+.hero__header__title {
+    font-size: 1em;
+}
+
+.lead {
+    font-family: Montserrat;
+    font-size: 0.5em;
+}
+
+.main__section {
+    padding: 1rem;
+}
+
+/* Children start at 1. */
+.main__section:nth-child(even) {
+    background-color: #cdcdcd;
+}
+
+.main__section__header {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+/* See .hero__header__title */
+.main__section__header > h3 {
+    font-size: 1em;
+}
+
+.content__header {
+    font-size: 1.5rem;
+}
+
+#services .main__section__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 3rem;
+}
+
+.card {
+    padding: 1rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+#experiences {
+
+}
+
+#reviews .main__section__content {
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+}
+
+.testimonial {
+    /* flex-grow: 1;
+    flex-basis: 0; */
+    display: inline-block;
+    width: 40%;
+}
+
+blockquote {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 5px solid #25263a;
+}
