@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>CSS</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/reveal.css">
+	<link rel="stylesheet" href="../css/theme/black.css">
+	<link rel="stylesheet" href="../lib/css/monokai.css">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<style>
+		a { display: block; }
+
+		.reveal ul {
+			font-size: 2rem;
+			text-align: left !important;
+		}
+
+		.reveal h3, .reveal .progress, .reveal .controls button { color: #a38aff; }
+
+		.reveal section img {
+			padding: 20px;
+			background: white;
+			border: none;
+			box-shadow: none;
+			height: 150px;
+		}
+	</style>
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section id="intro">
+				<section id="title">
+					<h1>CSS</h1>
+					<img src="../assets/signinqr.png" alt="sign in form qr code">
+					<a href="https://forms.gle/H72nCVb9hMBRs8U28" target="_blank" rel="noopener noreferrer">
+						https://forms.gle/H72nCVb9hMBRs8U28
+					</a>
+				</section>
+				<section id="whatIsCSS">
+					<h3>What is it?</h3>
+					<ul>
+						<li>Cascading Style Sheets</li>
+						<li>Used to define the style/layout of HTML</li>
+						<li>Not a programming language</li>
+						<li>One of the three fundamental languages of the web</li>
+					</ul>
+				</section>
+				<section id="css3">
+					<h3>CSS3</h3>
+					<img src="../assets/css3.png" alt="css3 logo">
+					<br>
+					<ul>
+						<li>Most modern standard of CSS</li>
+						<li>First released in 1996</li>
+						<li>Managed by the <abbr title="World Wide Web Consortium">W3C</abbr></li>
+					</ul>
+				</section>
+			</section>
+			<section id="codingTime">
+                <section id="writingCSS">
+                    <h1>Writing CSS</h1>
+                </section>
+                <section id="syntax">
+                    <h3>Syntax</h3>
+                    <pre><code data-trim>
+                        selector {
+                            styles
+                        }
+                    </code></pre>
+                </section>
+                <section id="whereCSS">
+                    <h3>Where to write CSS</h3>
+                    <pre><code data-trim>
+                        &lt;element style="property: value;"&gt;Content&lt;/element&gt;
+                    </code></pre>
+                    <pre><code data-trim>
+                        &lt;head&gt;
+                            &lt;title&gt;Style Tag&lt;/title&gt;
+                            &lt;style&gt;
+                                selector &lbrace;
+                                    property: value;
+                                &rbrace;
+                            &lt;/style&gt;
+                        &lt;/head&gt;
+                    </code></pre>
+                    <pre><code data-trim>
+                        &lt;head&gt;
+                            &lt;link rel="stylesheet" href="path/to/file.css"&gt;
+                        &lt;/head&gt;
+                    </code></pre>
+                    <aside class="notes">
+                        <ol>
+                            <li>Inline is outdated</li>
+                            <li>Generally not used anymore</li>
+                            <li>Most common due to separation of concerns</li>
+                        </ol>
+                    </aside>
+                </section>
+                <section id="selectors">
+                    <h3>Selectors</h3>
+                    <ul>
+                        <li>Tagnames, Classes, IDs</li>
+                        <li>Descendant, Adjacent, Sibling, Attribute, etc.</li>
+                        <li>Psuedo-selectors</li>
+                    </ul>
+                </section>
+                <section id="specificity">
+                    <h3>Specificity</h3>
+                    <ul>
+                        <li>Tags have a specificity of one, classes 10, ids 100</li>
+                        <li>Styles with a higher specificity have higher priority
+                            <ul>
+                                <li>Inline styles will always be highest priority</li>
+                            </ul>
+                        </li>
+                        <li>If two things are of equal specificity, the one that appears later is applied</li>
+                    </ul>
+                </section>
+                <section id="commonProperties">
+                    <h3>Common properties</h3>
+                    <ul>
+                        <li><code>margin</code></li>
+                        <li><code>padding</code></li>
+                        <li><code>border</code></li>
+                        <li><code>color</code></li>
+                        <li><code>background</code></li>
+                        <li><code>width</code></li>
+                        <li><code>height</code></li>
+                        <li><code>min-width</code></li>
+                        <li><code>min-height</code></li>
+                        <li><code>display</code></li>
+                        <li><code>position</code></li>
+                        <li><code>text-align</code></li>
+                        <li>etc.</li>
+                    </ul>
+                </section>
+                <section id="terminology">
+                    <h3>Terminology</h3>
+                    <ul>
+                        <li>
+                            <strong>Specification</strong>: comes from the CSS specification
+                        </li>
+                        <li>
+                            <strong>User Agent</strong>: comes from the browser
+                        </li>
+                        <li>
+                            <strong>Author</strong>: comes from the website makes
+                        </li>
+                        <li>
+                            <strong>User</strong>: comes from the end-user
+                        </li>
+                    </ul>
+                </section>
+                <section id="inheritance">
+                    <h3>Inheritance</h3>
+                    <p>Some properties are inherited by default</p>
+                    <ul>
+                        <li><code>initial - </code>use the initial value as set by the CSS specification</li>
+                        <li><code>inherit - </code>use the parent's value; forces the property to be inherited</li>
+                        <li><code>unset - </code>resets to<code> initial </code>or<code> inherit </code>depending if the property is inherited; removes any explicit style declaration for this element</li>
+                        <li><code>revert - </code>resets to the default value of the browser or<code> inherit </code>depending if the property is inherited</li>
+                    </ul>
+                    <aside class="notes">
+                        <ul>
+                            <li>Take what I say with a grain of salt b/c I'm not super familiar with inheritance</li>
+                            <li>Can be applied to any non-shorthand property</li>
+                            <li>Commonly used with the<code>all</code> property</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section id="makingLayouts">
+                    <h3>Making Layouts</h3>
+                    <p>Using CSS, we can easily create responsive layouts</p>
+                    <ul>
+                        <li><code>@media </code>and<code> @supports </code> queries</li>
+                        <li>CSS Flexbox</li>
+                        <li>CSS Grid</li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <h1>Additional Resources</h1>
+                <ul>
+                    <li>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS Documentation</a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=UB1O30fR-EE&t=2917s" target="_blank" rel="noopener noreferrer">CSS for Absolute Beginners</a>
+                    </li>
+                    <li>
+                        <a href="https://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048" target="_blank" rel="noopener noreferrer">30 Common CSS Selectors</a>
+                    </li>
+                    <li>
+                        <a href="https://medium.com/better-programming/css-explicit-defaulting-initial-inherit-unset-and-revert-9110647cdaa1" target="_blank" rel="noopener noreferrer">CSS Inheritance</a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/watch?v=GAjoVRmipcU&feature=emb_logo" target="_blank" rel="noopener noreferrer">Differences in CSS Inheritance</a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/playlist?list=PLillGF-RfqbZTASqIqdvm1R5mLrQq79CU" target="_blank" rel="noopener noreferrer">HTML/CSS Playlist</a>
+                    </li>
+                </ul>
+            </section>
+		</div>
+	</div>
+
+	<script src="../js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			dependencies: [
+				{ src: '../plugin/notes/notes.js', async: true },
+				{ src: '../plugin/highlight/highlight.js', async: true }
+			],
+			controlsTutorial: false,
+			mouseWheel: true
+		});
+	</script>
+</body>
+</html>

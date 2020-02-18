@@ -1,0 +1,205 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>HTML</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/reveal.css">
+	<link rel="stylesheet" href="../css/theme/black.css">
+	<link rel="stylesheet" href="../lib/css/monokai.css">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<style>
+		a { display: block; }
+
+		.reveal ul {
+			font-size: 2rem;
+			text-align: left !important;
+		}
+
+		.reveal h3, .reveal .progress, .reveal .controls button { color: #a38aff; }
+
+		.reveal section img {
+			padding: 20px;
+			background: white;
+			border: none;
+			box-shadow: none;
+			height: 150px;
+		}
+	</style>
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section id="intro">
+				<section id="title">
+					<h1>HTML</h1>
+					<img src="../assets/signinqr.png" alt="sign in form qr code">
+					<a href="https://forms.gle/H72nCVb9hMBRs8U28" target="_blank" rel="noopener noreferrer">
+						https://forms.gle/H72nCVb9hMBRs8U28
+					</a>
+				</section>
+				<section id="whatIsHTML">
+					<h3>What is it?</h3>
+					<ul>
+						<li>HyperText Markup Language</li>
+						<li>Used to markup and define the structure of webpages</li>
+						<li>Not a programming language</li>
+						<li>One of the three fundamental languages of the web</li>
+					</ul>
+				</section>
+				<section id="html5" data-notes="W3C is the main standard organization for the WWW">
+					<h3>HTML5</h3>
+					<img src="../assets/html5.png" alt="html5 logo">
+					<br>
+					<ul>
+						<li>Most modern standard of HTML</li>
+						<li>First released in 2014</li>
+						<li>Managed by the <abbr title="World Wide Web Consortium">W3C</abbr></li>
+					</ul>
+				</section>
+			</section>
+			<section id="codingTime">
+                <section id="writingHTML">
+                    <h1>Writing HTML</h1>
+                </section>
+				<section id="firstSteps">
+					<h3>First Steps</h3>
+					<ol>
+						<li>Text editor</li>
+						<li>index.html</li>
+						<li>Opening it in the browser</li>
+					</ol>
+					<aside class="notes">
+						<ol>
+							<li>Sublime, Atom, or ***VSCode***</li>
+							<li>index.html is the root file</li>
+							<li>Browsers take the contents of an HTML file and parse it</li>
+						</ol>
+					</aside>
+				</section>
+				<section id="syntax">
+					<h3>Syntax</h3>
+					<pre><code data-trim>
+						&lt;h1&gt;content&lt;/h1&gt;
+						&lt;br/&gt;
+					</code></pre>
+					<aside class="notes">
+						<ul>
+							<li>Self-closing tags can omit the / in HTML5</li>
+							<li>Self-closing tags come from XHTML, an older version</li>
+						</ul>
+					</aside>
+				</section>
+				<section id="boilerplate">
+					<h3>Boilerplate &amp; Structure</h3>
+					<pre><code data-trim data-line-numbers>
+						&lt;!DOCTYPE html&gt;
+						&lt;html&gt;
+						&lt;head&gt;
+							&lt;title&gt;Name&lt;/title&gt;
+						&lt;/head&gt;
+						&lt;body&gt;
+
+						&lt;/body&gt;
+						&lt;/html&gt;
+					</code></pre>
+					<ul>
+						<li>HTML5 declaration</li>
+						<li><code>html - </code>the root element</li>
+						<li><code>head - </code>represents metadata about the document</li>
+						<li><code>title - </code>the document title; should make sense regardless of context</li>
+						<li><code>body - </code>represents the content of the document</li>
+					</ul>
+				</section>
+				<section id="commonTags">
+					<h3>Common Tags</h3>
+					<ul>
+						<li><code>h1-h6</code></li>
+						<li><code>div, span</code></li>
+						<li><code>p, a, img</code></li>
+						<li><code>ul, ol, li</code></li>
+						<li><code>table, thead, th, tbody, tr, td</code></li>
+						<li><code>form, fieldset, label, input, select, textarea, submit</code></li>
+						<li><code>button</code></li>
+						<li><code>br, hr</code></li>
+						<li><code>link, script</code></li>
+					</ul>
+				</section>
+				<section id="semanticTags">
+					<h3>Semantic tags</h3>
+					<ul>
+						<li>
+							<code>nav - </code>
+							specifies a section containing links to other pages or parts of a page
+						</li>
+						<li>
+							<code>main - </code>
+							specifies the main content of the webpage
+						</li>
+						<li>
+							<code>header - </code>
+							specifies the introductory content of its nearest ancestor
+						</li>
+						<li>
+							<code>section - </code>
+							specifies a generic grouping of content related under a common theme; typically labeled with a h1-h6 tag
+						</li>
+						<li>
+							<code>article - </code>
+							an independent piece of content that can be reused anywhere; e.g. blog post, forum post, newspaper article, widget
+						</li>
+						<li>
+							<code>aside - </code>
+							specifies loosely related content
+						</li>
+						<li>
+							<code>footer - </code>
+							specifies the footer content (e.g. author, related links, copyright) of its nearest ancestor
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section id="additionalResources">
+				<h1>Additional Resources</h1>
+				<ul>
+					<li>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML Documentation</a>
+					</li>
+					<li>
+						<a href="https://www.youtube.com/watch?v=UB1O30fR-EE" target="_blank" rel="noopener noreferrer">HTML for Absolute Beginners</a>
+					</li>
+					<li>
+						<a href="https://www.youtube.com/watch?v=0hqhAIjE_8I&t" target="_blank" rel="noopener noreferrer">ARIA for Accessibility</a>
+					</li>
+					<li>
+						<a href="https://www.youtube.com/watch?v=YB04cZxreg8" target="_blank" rel="noopener noreferrer">Adventures in Accessibility (1 of 3)</a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/playlist?list=PLillGF-RfqbZTASqIqdvm1R5mLrQq79CU" target="_blank" rel="noopener noreferrer">HTML/CSS Playlist</a>
+                    </li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="../js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			dependencies: [
+				{ src: '../plugin/notes/notes.js', async: true },
+				{ src: '../plugin/highlight/highlight.js', async: true }
+			],
+			controlsTutorial: false,
+			mouseWheel: true
+		});
+	</script>
+</body>
+</html>
