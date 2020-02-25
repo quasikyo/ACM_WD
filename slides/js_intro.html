@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>JS Intro</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/reveal.css">
+	<link rel="stylesheet" href="../css/theme/black.css">
+	<link rel="stylesheet" href="../lib/css/monokai.css">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<style>
+		a { display: block; }
+
+		.reveal ul {
+			font-size: 2rem;
+			text-align: left !important;
+		}
+
+		.reveal h3, .reveal .progress, .reveal .controls button { color: #a38aff; }
+
+		.reveal section img {
+			padding: 20px;
+			background: white;
+			border: none;
+			box-shadow: none;
+			height: 150px;
+		}
+	</style>
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section id="intro">
+				<section id="title">
+					<h1>JS Intro</h1>
+					<img src="../assets/signinqr.png" alt="sign in form qr code" style="height: 300px;">
+					<a href="https://forms.gle/H72nCVb9hMBRs8U28" target="_blank" rel="noopener noreferrer">
+						https://forms.gle/H72nCVb9hMBRs8U28
+					</a>
+				</section>
+				<section id="whatIsJS">
+					<h3>What is it?</h3>
+					<ul>
+						<li>JavaScript</li>
+						<li>Used to add functionality to webpages</li>
+						<li><strong>Is</strong> a programming language</li>
+						<li>One of the three fundamental languages of the web</li>
+					</ul>
+				</section>
+				<section id="js">
+					<h3>JS</h3>
+					<img src="../assets/js.png" alt="js logo">
+					<br>
+					<ul>
+                        <li>Started out as Mocha</li>
+						<li>Managed by Ecma International
+                            <ul>
+                                <li>ECMAScript is the specification for JavaScript</li>
+                                <li>Current edition is the 10th edition (ECMAScript 2019)</li>
+                                <li>Mainly care about the 6th (ECMAScript 2015) and 7th (ECMAScript 2016) editions</li>
+                            </ul>
+                        </li>
+					</ul>
+				</section>
+			</section>
+			<section id="importantSutff">
+                <h1>Important Concepts</h1>
+                <ul>
+                    <li>Primitive Types</li>
+                    <li>OOP and functional programming</li>
+                    <li>Closures</li>
+                    <li>Hoisting</li>
+                    <li>The DOM and events</li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>Really busy ATM, will have to add more detail to these at a later date</li>
+                        <li>Keep in mind, this is an intro to JS, next meeting will be slower and more in depth</li>
+                    </ul>
+                </aside>
+			</section>
+			<section id="additionalResources">
+				<h1>Additional Resources</h1>
+				<ul>
+					<li>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/javascript" target="_blank" rel="noopener noreferrer">JS Documentation</a>
+					</li>
+					<li>
+						<a href="https://youtu.be/hdI2bqOjy3c" target="_blank" rel="noopener noreferrer">JS for Absolute Beginners</a>
+                    </li>
+					<li>
+						<a href="https://youtu.be/0ik6X4DJKCc" target="_blank" rel="noopener noreferrer">JS and the DOM (1 of 4)</a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/playlist?list=PLillGF-RfqbbnEGy3ROiLWk7JMCuSyQtX" target="_blank" rel="noopener noreferrer">Vanilla JS Playlist</a>
+                    </li>
+					<li>
+						<a href="https://www.youtube.com/playlist?list=PL0vfts4VzfNixzfaQWwDUg3W5TRbE7CyI" target="_blank" rel="noopener noreferrer">Some Nice JS Videos</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="../js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			dependencies: [
+				{ src: '../plugin/notes/notes.js', async: true },
+				{ src: '../plugin/highlight/highlight.js', async: true }
+			],
+			controlsTutorial: false,
+			mouseWheel: true
+		});
+	</script>
+</body>
+</html>
