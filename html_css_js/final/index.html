@@ -6,7 +6,7 @@
     <title>Some Title</title>
     <link rel="stylesheet" href="main.css">
 </head>
-<body>
+<body class="owo">
     <nav class="nav">
         <!-- When on an actual server, index.html is loaded by default when no file is specified. -->
         <!-- So writing just / or ./ would suffice to load index.html. -->
@@ -44,14 +44,17 @@
                 <div class="card">
                     <h5 class="content__header card__header">Service 1</h5>
                     <p class="card__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae dolor impedit, eaque delectus beatae quo assumenda aut itaque eum quia veniam sit, ratione quibusdam quidem sed laboriosam, aspernatur qui eos maxime debitis. Doloribus ullam animi ex veritatis alias. Autem atque aut nulla, accusamus fuga nobis quos corrupti eos quia repellat?</p>
+                    <button role="button">LEARN MORE</button>
                 </div>
                 <div class="card">
                     <h5 class="content__header card__header">Service 2</h5>
                     <p class="card__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae dolor impedit, eaque delectus beatae quo assumenda aut itaque eum quia veniam sit, ratione quibusdam quidem sed laboriosam, aspernatur qui eos maxime debitis.</p>
+                    <button role="button">LEARN MORE</button>
                 </div>
                 <div class="card">
                     <h5 class="content__header card__header">Service 3</h5>
                     <p class="card__content">Doloribus ullam animi ex veritatis alias. Autem atque aut nulla, accusamus fuga nobis quos corrupti eos quia repellat?</p>
+                    <button role="button">LEARN MORE</button>
                 </div>
             </section>
         </section>
@@ -94,5 +97,10 @@
             </section>
         </section>
     </main>
+
+    <!-- Placing the script at the bottom has the browser load the JS last. -->
+    <!-- defer: load scripts in the order they are encountered but don't run them until HTML is done being parsed -->
+    <!-- async: load scripts in the background and run them in whatever order they become available regardless of HTML -->
+    <script src="./main.js" defer></script>
 </body>
 </html>
