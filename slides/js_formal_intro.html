@@ -1,0 +1,231 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>JS Formal Intro</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/reveal.css">
+	<link rel="stylesheet" href="../css/theme/black.css">
+	<link rel="stylesheet" href="../lib/css/monokai.css">
+	<!-- Printing and PDF exports -->
+	<script>
+		const link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<style>
+		a { display: block; }
+
+		.reveal ul {
+			font-size: 2rem;
+			text-align: left !important;
+		}
+
+		.reveal h3, .reveal .progress, .reveal .controls button { color: #a38aff; }
+
+		.reveal section img {
+			padding: 20px;
+			background: white;
+			border: none;
+			box-shadow: none;
+			height: 150px;
+		}
+	</style>
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section id="intro">
+				<section id="title" data-notes="JS Intro is more of a demonstration of JS than an intro">
+					<h1>JS Formal Intro</h1>
+					<img src="../assets/signinqr.png" alt="sign in form qr code" style="height: 300px;">
+					<a href="https://forms.gle/H72nCVb9hMBRs8U28" target="_blank" rel="noopener noreferrer">
+						https://forms.gle/H72nCVb9hMBRs8U28
+					</a>
+				</section>
+			</section>
+			<section id="codingTime">
+                <section id="writingJS">
+                    <h1>Writing JS</h1>
+                </section>
+                <section id="importantSutff" data-notes="Won't be getting too into OOP, FOP, or the DOM in this meeting">
+                    <h3>Important Concepts</h3>
+                    <ul>
+                        <li>Primitive Types</li>
+                        <li>OOP and FOP</li>
+                        <li>Hoisting</li>
+                        <li>Closures</li>
+                        <li>The DOM and events</li>
+                    </ul>
+                </section>
+                <section id="primitiveTypes" data-notes="Come back to var once you get to functions">
+                    <h3>Primitive Types</h3>
+                    <p>JavaScript is dynamically and strongly typed</p>
+                    <ul>
+                        <li>number</li>
+                        <li>bigint</li>
+                        <li>string</li>
+                        <li>boolean</li>
+                        <li>null</li>
+                        <li>undefined</li>
+                        <li>symbol</li>
+                        <hr>
+                        <li><code>var</code>,<code> let</code>,<code> const</code></li>
+                        <li><code>typeof</code></li>
+                    </ul>
+                    <p>Everything else is type Object</p>
+                    <aside class="notes">
+                        <dl>
+                            <dt>dynamic</dt>
+                            <dd>types are determined at runtime</dd>
+                            <dt>strong</dt>
+                            <dd>can only perform certain operations on certain types</dd>
+                        </dl>
+                    </aside>
+                </section>
+                <section id="objectsData">
+                    <h3>Objects (Data Structure)</h3>
+                    <pre><code class="hljs" data-trim>
+                        const obj = {
+                            key: 'value',
+                            another: 1
+                        };
+                    </code></pre>
+                    <pre><code class="hljs" data-trim>
+                        console.log(obj.key);      // 'value'
+                        console.log(obj['key']);   // 'value'
+
+                        const someVar = 'another';
+                        console.log(obj[someVar]); // 1
+                    </code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li>First way is limited in what property names it can access</li>
+                            <li>Second and third way are actually the same in that they use a computed property
+                                <ul>
+                                    <li>The second one is just a string literal</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </aside>
+                </section>
+                <section id="functions">
+                    <h3>Functions</h3>
+                    <p>Function Declaration</p>
+                    <pre><code class="hljs" data-trim>
+                        function name(param1, param2) { /* code */ }
+                    </code></pre>
+                    <p>Function Expression</p>
+                    <pre><code class="hljs" data-trim>
+                        const x = function name(param1, param2) { /* code */ }
+                    </code></pre>
+                    <p>Anonymous Function Expression</p>
+                    <pre><code class="hljs" data-trim>
+                        const x = function(param1, param2) { /* code */ }
+                    </code></pre>
+                    <p>Arrow Function (ES2015/ES6)</p>
+                    <pre><code class="hljs" data-trim>
+                        const x = (param1, param2) => { /* code */ };
+                    </code></pre>
+                    <aside class="notes">
+                        <ul>
+                            <li>The name of a function in a function expression does not matter
+                                <ul>
+                                    <li>You only use it in recursion</li>
+                                </ul>
+                            </li>
+                            <li>Arrow functions are anonymous function expressions</li>
+                        </ul>
+                    </aside>
+                </section>
+                <section id="hoisting">
+                    <h3>Hoisting</h3>
+                    <ul>
+                        <li>Declarations with<code> var </code> and function declarations, <strong>not assignments</strong>, are hoisted to the top of the function they are in</li>
+                        <li>This means they can be accessed anywhere within that function (even before they're declared)</li>
+                        <li>If they aren't in a function, it becomes globally scoped</li>
+                    </ul>
+                    <pre><code class="hljs" data-trim>
+                        console.log(x); // undefined (but not a ReferenceError)
+                        if (true) {
+                            var x = 2;
+                        }
+                        console.log(x); // 2
+                    </code></pre>
+                    <ul>
+                        <li>The second<code> console.log </code>would log<code> undefined </code> if the boolean was<code> false </code>since it's still declared, but never assigned.</li>
+                    </ul>
+                </section>
+                <section id="closures">
+                    <h3>Closures</h3>
+                    <p>Functions can remember the context in which they were created</p>
+                    <pre><code data-trim>
+                        const outer = (str) => {
+                            const inner = () => {
+                                return str;
+                            };
+                            return inner;
+                        };
+                        const x = outer('x');
+                        const y = outer('y');
+                        const z = outer('z');
+                        console.log(x(), y(), z()); // 'x', 'y', 'z'
+                    </code></pre>
+                    <p>Would anything change if<code> str </code> was globally scoped?</p>
+                    <aside class="notes">
+                        <pre><code data-trim>
+                            let str = '';
+                            const outer = (param) => {
+                                str = param;
+                                const inner = () => {
+                                    return str;
+                                };
+                                return inner;
+                            };
+                            const x = outer('x');
+                            const y = outer('y');
+                            const z = outer('z');
+                            console.log(x(), y(), z()); // 'z', 'z', 'z'
+                        </code></pre>
+                    </aside>
+                </section>
+            </section>
+			<section id="additionalResources">
+				<h1>Additional Resources</h1>
+				<ul>
+					<li>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/javascript" target="_blank" rel="noopener noreferrer">JS Documentation</a>
+					</li>
+					<li>
+						<a href="https://youtu.be/hdI2bqOjy3c" target="_blank" rel="noopener noreferrer">JS for Absolute Beginners</a>
+                    </li>
+					<li>
+						<a href="https://youtu.be/0ik6X4DJKCc" target="_blank" rel="noopener noreferrer">JS and the DOM (1 of 4)</a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/playlist?list=PLillGF-RfqbbnEGy3ROiLWk7JMCuSyQtX" target="_blank" rel="noopener noreferrer">Vanilla JS Playlist</a>
+                    </li>
+					<li>
+						<a href="https://www.youtube.com/playlist?list=PL0vfts4VzfNixzfaQWwDUg3W5TRbE7CyI" target="_blank" rel="noopener noreferrer">Some Nice JS Videos</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+	<script src="../js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			dependencies: [
+				{ src: '../plugin/highlight/highlight.js' },
+				{ src: '../plugin/notes/notes.js', async: true }
+			],
+			controlsTutorial: false,
+			mouseWheel: true
+		});
+	</script>
+</body>
+</html>
